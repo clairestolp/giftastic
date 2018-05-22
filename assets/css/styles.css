@@ -1,0 +1,52 @@
+/*
+* === CLASSES ===
+    * .header
+    * .input
+        ** .input-el
+        ** .input-btn
+    * .results
+        ** .results-item
+            *** .results-img
+            *** .results-icon
+            *** .results-text
+                **** .results-text-light
+    * .aside
+        ** aside.btn
+*/
+html, body{
+    background: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#topics{
+    height: 600px;
+    overflow-y: auto;
+    
+}
+
+.cursive{
+    font-family: 'Pacifico';
+}
+
+.text-lg{
+    font-size: 1.5em;
+}
+.sans-serif{
+    font-family: 'Quicksand';
+}
+
+.bg-white-trans{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group{
+    width: 300px;
+}
+.card {
+    border: solid 10px #FFF;
+}
+
+footer a{
+    color: rgba(255,255,255,0.5);
+}

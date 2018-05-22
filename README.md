@@ -1,5 +1,5 @@
 # giftastic
-A dynamic web application that connects with GIPHY API to display gifs
+A dynamic web application that connects with GIPHY API to display gifs to display GIFs based on the emotion the user clicks.
 
 ### Guidelines
 
@@ -35,6 +35,32 @@ A dynamic web application that connects with GIPHY API to display gifs
 ### Technology used
 * HTML, CSS
 * JavaScript
+* Bootstrap
 * Jquery
 * AJAX
 * [Giphy API](https://github.com/Giphy)
+
+### Approach
+1. Variables
+    * HTML (Object) --> HTML snippets of code will be stored here to be used in the application in an attempt to improve readability
+        ** row
+        ** resultsItem
+        ** topicBtn
+        ** rating
+        ** downloadIcon
+    * topics (Array) --> a default list of topics that loads with the page
+
+2. Classes
+    * .header
+    * .input
+        ** .input-el
+        ** .input-btn
+    * .results
+        ** .results-item
+            *** .results-img
+            *** .results-icon
+            *** .results-text
+                **** .results-text-light
+    * .aside
+        ** aside.btn
+
