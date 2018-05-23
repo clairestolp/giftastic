@@ -13,6 +13,7 @@ var data;
 var offset = 0;
 
 function addCard (gif) {
+    //add in a p tag that contains the rating and a download btn icon
     var container = $('<div>').addClass('col-md-3');
     var card = $('<div>')
         .addClass('card');
@@ -22,7 +23,8 @@ function addCard (gif) {
         .attr('data-state', 'still');
     var cardBody = $('<div>')
         .addClass('card-body')
-        .append(`<p class="card-title">${gif.title}</p>`);
+        .append(`<p class="card-title">${gif.title}</p>`)
+        .append(`<p class="rating m-0">Rating: ${gif.rating.toUpperCase()}</p>`);
 
     card
         .append(img)
@@ -31,11 +33,6 @@ function addCard (gif) {
     container.append(card);
     return container;
 }
-
-//when aside btn is clicked, ajax call
-    //document.on('click', '.aside-btn', callback)
-    //prepend results to #results
-//add btn to clear results div
 
 
 topics.forEach(function (item, index) {
@@ -47,6 +44,7 @@ topics.forEach(function (item, index) {
 });
 
 $('#addBtn').on('click', function () {
+    event.preventDefault();
     var query = $('#query').val();
     var btn = $('<button>')
         .addClass('btn btn-primary m-2 aside-btn')

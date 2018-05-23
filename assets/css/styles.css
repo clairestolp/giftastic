@@ -25,6 +25,15 @@ html, body{
     
 }
 
+
+.card-title{
+    font-size: 12px;
+}
+
+.rating{
+    font-size: 12px;
+}
+
 .cursive{
     font-family: 'Pacifico';
 }
