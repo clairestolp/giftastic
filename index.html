@@ -5,41 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GIFtastic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">-->
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <header>
-    <div class="text-center">
-        <h1><span class="text-lg sans-sarif">GIF</span> <span class="h1 cursive">tastic</span></h1>
+    <div class="center">
+        <h1><span class="sans-serif text-lg">GIF</span> <span class="cursive">tastic</span></h1>
         <p class="sans-serif">Emotions Edition</p>
     </div>  
 </header>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-10">
-                <div class="d-flex flex-row justify-content-center mb-3 rounded bg-white-trans">
-                    <!--text input here-->
-                    <div class="input-group p-2">
-                        <input type="text" id="query" class="form-control">
-                        <button id="addBtn" class="btn btn-primary">Add</button>   
+        <div>
+            <!--Container div, div and buttons div-->
+            <div>
+                <!--contains input and results-->
+                <div class="input bg-white-trans">
+                   
+                    <div class="input-container">
+                        <input type="text" id="query" class="input-el sans-serif">
+                        <button id="addBtn" class="input-btn cursive">Add</button>   
                     </div>
+
                 </div>
-                <div id="results" class="container mt-3, bg-white-trans grid">
+
+                <div id="results" class="grid bg-white-trans clearfix">
                     <div class="grid-sizer"></div>
                     <!--masonry plugin here-->
                     <!--results displayed dynamically here-->
                 </div>
+
             </div>
-            <div id="topics" class="col-md-2 d-flex flex-column rounded bg-white-trans">
+            <!--Buttons div below-->
+            <div id="topics" class="aside bg-white-trans clearfix">
                 <!--buttons div here **overflow srcroll**-->
             </div>
         </div>
     </div>
     <footer>
-        <a href='https://www.freepik.com/free-vector/blurred-background-with-bright-color_1990389.htm'>Designed by Freepik</a>
+        <a href='https://www.freepik.com/free-vector/blurred-background-with-bright-color_1990389.htm'>Bakcground designed by Freepik</a>
     </footer>
 </body>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>

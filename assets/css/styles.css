@@ -12,6 +12,11 @@
                 **** .results-text-light
     * .aside
         ** aside.btn
+
+* === COLORS ===
+#284476ff
+#358ca8ff
+#e4ecb9ff
 */
 html, body{
     background: url('../images/background.jpg');
@@ -20,32 +25,8 @@ html, body{
     background-attachment: fixed;
 }
 
-.grid-item{
-    float: left;
-    margin-bottom: 5px;
-}
-
-.grid-sizer, .grid-item{
-    float: left;
-    width: 15%;
-}
-
-.grid-item--width2{
-    width: 35%;
-}
-
-#topics{
-    height: 600px;
-    overflow-y: auto;
-    
-}
-
-.card-body{
-    font-size: 12px;
-}
-
-.card-body p {
-    margin-bottom: 0;
+.center{
+    text-align: center;
 }
 
 .cursive{
@@ -63,10 +44,110 @@ html, body{
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-.input-group{
-    width: 300px;
+.input{
+    height: 100px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-footer a{
+.input-container{
+    display: flex;
+    align-items: stretch;
+}
+
+input[type="text"]{
+    margin: 0;
+    border: none;
+    padding: 2px;
+    line-height: 2.5em;
+    background-color:#e4ecb9ff;
+    border: solid 5px #e4ecb9ff;
+    color: #284476ff;
+}
+
+input[type="text"]:focus{
+    border: none;
+    border: solid 5px rgba(53, 139, 168, 0.582);
+    outline: none;
+}
+
+.input-btn {
+    height: 100%; 
+    width: 100px;
+    padding: 5px;
+    background-color: #358ca8ff;
+    border: none;
+    color: #fff;
+    font-size: 1.5em
+}
+
+.input-btn:hover{
+    background-color: #284476ff;
+    cursor: pointer;
+}
+
+.aside{
+    width: 20%;
+    margin-right: 20px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.aside-btn{
+    margin: 5px;
+    padding: 5px;
+    background-color: #358ca8ff;
+    border: none;
+    color: #fff;
+    font-family: 'Quicksand';
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.aside-btn:hover{
+    background-color: #284476ff;
+    cursor: pointer;
+}
+
+#results{
+    float: left;
+    width: 75%;
+    margin-left: 20px;
+}
+.grid-sizer, .grid-item{
+    float: left;
+    width: 25%;
+}
+
+.grid-item--width2{
+    width: 35%;
+}
+
+#topics{
+    height: 600px;
+    overflow-y: auto;
+    
+}
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+footer {
+    color: rgba(255,255,255,0.5);
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    float: left;
+}
+
+footer a {
     color: rgba(255,255,255,0.5);
 }

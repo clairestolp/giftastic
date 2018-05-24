@@ -32,7 +32,7 @@ $('#addBtn').on('click', function () {
     event.preventDefault();
     var query = $('#query').val().trim();
     var btn = $('<button>')
-        .addClass('btn btn-primary m-2 aside-btn')
+        .addClass('aside-btn')
         .text(query)
         .val(query);
     aside.prepend(btn);
@@ -67,16 +67,16 @@ $(document).on('click', '.aside-btn', function () {
     });
 });
 
-$(document).on('click', '.card', function () {
-    var childImg = $(this).find('img');
-    var imgState = childImg.attr('data-state');
+$(document).on('click', '.grid-item', function () {
+    var img = $(this);
+    var imgState = img.attr('data-state');
     if(imgState === 'still'){
-        childImg
+        img
             .attr('data-state', 'animated')
-            .attr('src', childImg.attr('data-animated'));
+            .attr('src', img.attr('data-animated'));
     }else{
-        childImg
+        $(img)
             .attr('data-state', 'still')
-            .attr('src', childImg.attr('data-still'));
+            .attr('src', img.attr('data-still'));
     }   
 });
