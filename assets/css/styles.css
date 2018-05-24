@@ -19,10 +19,33 @@ html, body{
     background-size: cover;
     background-attachment: fixed;
 }
+
+.grid-item{
+    float: left;
+    margin-bottom: 5px;
+}
+
+.grid-sizer, .grid-item{
+    float: left;
+    width: 15%;
+}
+
+.grid-item--width2{
+    width: 35%;
+}
+
 #topics{
     height: 600px;
     overflow-y: auto;
     
+}
+
+.card-body{
+    font-size: 12px;
+}
+
+.card-body p {
+    margin-bottom: 0;
 }
 
 .cursive{
@@ -42,9 +65,6 @@ html, body{
 
 .input-group{
     width: 300px;
-}
-.card {
-    border: solid 10px #FFF;
 }
 
 footer a{

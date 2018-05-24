@@ -1,35 +1,17 @@
-//snippets of code to insert elements
-    //"row": $('<div>').addClass('row'),
-    // "resultItem": $('<div>').addClass('col-md-3 result-btn'),
-    //"topicBtn": $('<button>').addClass('btn btn-primary aside-btn'),
-    //"rating": $('<p>').addClass('results-text-light'),
-    //"downloadIcon": $('<div>').addClass('results-icon')
 
-
-//The theme for this app is emotions
 var topics = ['happy', 'frustrated', 'embarassed', 'surprised', 'angry', 'bored'];
 var aside = $('#topics');
 var data;
 var offset = 0;
 
 function addCard (gif) {
-    var container = $('<div>').addClass('col-md-3');
-    var card = $('<div>')
-        .addClass('card');
-    var img = $('<img>', {class: 'card-img-top rounded', src: gif.images.downsized_still.url, alt: gif.slug})
+
+    var img = $('<img>', {class: 'grid-item', src: gif.images.downsized_still.url, alt: gif.slug})
         .attr('data-still', gif.images.downsized_still.url)
         .attr('data-animated', gif.images.downsized.url)
         .attr('data-state', 'still');
-    var cardBody = $('<div>')
-        .addClass('card-body')
-        .append(`<p class="card-title">${gif.title}</p>`);
 
-    card
-        .append(img)
-        .append(cardBody);
-
-    container.append(card);
-    return container;
+    return img;
 }
 
 //when aside btn is clicked, ajax call
@@ -47,7 +29,8 @@ topics.forEach(function (item, index) {
 });
 
 $('#addBtn').on('click', function () {
-    var query = $('#query').val();
+    event.preventDefault();
+    var query = $('#query').val().trim();
     var btn = $('<button>')
         .addClass('btn btn-primary m-2 aside-btn')
         .text(query)
@@ -64,18 +47,21 @@ $(document).on('click', '.aside-btn', function () {
     }).then(function(response){
         data = response.data;
         console.log(data);
-        var row;
+        
         $(data).each(function(i, gif){
-            if(i % 4 === 0){
-                row = $('<div>').addClass('row mb-2')
-                    .append(addCard(gif));
-                $('#results')
-                    .addClass('rounded p-4')
-                    .prepend(row);
-            }else{
-                row.append(addCard(gif));
-            } 
-        });
+            $('.grid').append(addCard(gif));
+        }); 
+
+        var $grid = $('.grid').imagesLoaded().progress(function() {
+            $('.grid').masonry({
+              itemSelector: '.grid-item',
+              columnWidth: '.grid-sizer',
+              percentPosition: true,
+              horizontalOrder: true
+            });
+          });
+        
+
         offset += 12;
         console.log(results);
     });

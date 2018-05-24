@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GIFtastic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">-->
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -27,7 +27,9 @@
                         <button id="addBtn" class="btn btn-primary">Add</button>   
                     </div>
                 </div>
-                <div id="results" class="container mt-3, bg-white-trans">
+                <div id="results" class="container mt-3, bg-white-trans grid">
+                    <div class="grid-sizer"></div>
+                    <!--masonry plugin here-->
                     <!--results displayed dynamically here-->
                 </div>
             </div>
@@ -40,5 +42,7 @@
         <a href='https://www.freepik.com/free-vector/blurred-background-with-bright-color_1990389.htm'>Designed by Freepik</a>
     </footer>
 </body>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="assets/javascript/app.js"></script>
 </html>
