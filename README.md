@@ -1,7 +1,18 @@
-# giftastic
+# giftastic (masonry style)
 A dynamic web application that connects with GIPHY API to display gifs to display GIFs based on the emotion the user clicks.
 
-### Guidelines
+### Assignment Description
+
+####Objective
+Use ajax and jQuery to retrieve data from an api and display it dynamically for the user
+
+### Technology used
+* HTML, CSS
+* JavaScript
+* Bootstrap
+* Jquery
+* AJAX
+* [Giphy API](https://github.com/Giphy)
 
 1. Before you can make any part of our site work, you need to create an array of strings, each one related to a topic that interests you. Save it to a variable called `topics`.
    * We chose animals for our theme, but you can make a list to your own liking.
@@ -32,15 +43,11 @@ A dynamic web application that connects with GIPHY API to display gifs to displa
 
 5. Integrate this search with additional APIs such as OMDB, or Bands in Town. Be creative and build something you are proud to showcase in your portfolio
 
-### Technology used
-* HTML, CSS
-* JavaScript
-* Bootstrap
-* Jquery
-* AJAX
-* [Giphy API](https://github.com/Giphy)
+
 
 ### Approach
+On click of any of the buttons in the aside element, ajax will make a call to the GIFY api to search the value of the button. A card is created for every result returned. The cards are laid out in the results div using Bootstrap's grid system.
+
 1. Variables
     * HTML (Object) --> HTML snippets of code will be stored here to be used in the application in an attempt to improve readability
         ** row
