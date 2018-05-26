@@ -1,9 +1,9 @@
-# giftastic (masonry style)
+# giftastic
 A dynamic web application that connects with GIPHY API to display gifs to display GIFs based on the emotion the user clicks.
 
 ### Assignment Description
 
-####Objective
+#### Objective
 Use ajax and jQuery to retrieve data from an api and display it dynamically for the user
 
 ### Technology used
