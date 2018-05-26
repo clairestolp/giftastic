@@ -112,9 +112,11 @@ input[type="text"]:focus{
     cursor: pointer;
 }
 
+/*masonry*/
+
 #results{
     float: left;
-    width: 75%;
+    width: 960px;
     margin-left: 20px;
 }
 .grid-sizer, .grid-item{
@@ -122,8 +124,24 @@ input[type="text"]:focus{
     width: 25%;
 }
 
-.grid-item--width2{
-    width: 35%;
+
+/*AddCard elements*/
+
+.result-item{
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.result-img{
+    width: 100%;
+}
+
+.result-text{
+    padding: 3px;
+    font-family: 'Quicksand';
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 #topics{
