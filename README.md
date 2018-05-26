@@ -1,4 +1,4 @@
-# giftastic
+# GIFtastic
 A dynamic web application that connects with GIPHY API to display gifs to display GIFs based on the emotion the user clicks.
 
 ### Assignment Description
@@ -46,18 +46,9 @@ Use ajax and jQuery to retrieve data from an api and display it dynamically for 
 
 
 ### Approach
-On click of any of the buttons in the aside element, ajax will make a call to the GIFY api to search the value of the button. A card is created for every result returned. The cards are laid out in the results div using Bootstrap's grid system.
+On click of any of the buttons in the aside element, ajax will make a call to the GIFY api to search the value of the button. A card is created for every result returned. The cards are laid out in the results div using Bootstrap's grid system. A user can also input their own topic into the input and a new button will be created and appended to the aside div.
 
-1. Variables
-    * HTML (Object) --> HTML snippets of code will be stored here to be used in the application in an attempt to improve readability
-        ** row
-        ** resultsItem
-        ** topicBtn
-        ** rating
-        ** downloadIcon
-    * topics (Array) --> a default list of topics that loads with the page
-
-2. Classes
+1. Classes
     * .header
     * .input
         ** .input-el
@@ -70,4 +61,11 @@ On click of any of the buttons in the aside element, ajax will make a call to th
                 **** .results-text-light
     * .aside
         ** aside.btn
+
+2. Functions
+    * `addCard(gif)` - takes the api data for a said gif and returns a card element
+    * `topics.forEach()` - Appends elements with the class .aside-btn to the aside div
+    * `$('#addBtn').on('click', function...)` - Creates a new button and appends it to the .aside div
+    * `$(document).on('click', '.aside-btn', function...)` - Takes the value of the btn and makes an AJAX call and displays the results 
+    * `$(document).on('click', '.card', function...)` - When a card is clicked it switches the data-state attribute to either still or animated. which will change the src attribute to the animated, or still image.
 
