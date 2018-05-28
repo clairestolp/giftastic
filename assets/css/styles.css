@@ -116,7 +116,7 @@ input[type="text"]:focus{
 
 #results{
     float: left;
-    width: 960px;
+    width: 75%;
     margin-left: 20px;
 }
 .grid-sizer, .grid-item{
@@ -147,7 +147,8 @@ input[type="text"]:focus{
 #topics{
     height: 600px;
     overflow-y: auto;
-    
+    float: right;
+    width: 20%;
 }
 
 .clearfix::after{
