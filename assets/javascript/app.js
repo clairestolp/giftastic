@@ -3,37 +3,25 @@ var topics = ['happy', 'frustrated', 'embarassed', 'surprised', 'angry', 'bored'
 var aside = $('#topics');
 var data;
 var offset = 0;
+var currentQuery = undefined;
 
-/* function addCard (gif) {
-    var container = $('<div>')
-        .addClass('grid-item');
+//init masonry
+var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+  })
 
-    var img = $('<img>', {src: gif.images.downsized_still.url, alt: gif.slug})
-        .addClass('result-img')
-        .attr('data-still', gif.images.downsized_still.url)
-        .attr('data-animated', gif.images.downsized.url)
-        .attr('data-state', 'still');
-    
-    var card = $('<div>')
-        .addClass('result-item');
-    var title = $('<p>')
-        .text(gif.title)
-        .addClass('result-text')
-        .css('font-weight', 'bold');
-    var rating = $('<p>')
-        .text(gif.rating)
-        .addClass('result-text');
-    
-    card
-        .append(img)
-        .append(title)
-        .append(rating);
+function callGify (query, callback) {
+    var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=zlEsPY1h8Xym7X61wEe9RncZ973KIsCt&q=${query}&limit=12&offset=${offset}&rating=PG&lang=en`;
+    console.log(queryURL);
+    $.ajax({
+        url: queryURL,
+        method: 'GET',
+        success: callback
+    }).then(() => offset += 12);
+}
 
-    container.append(card);
-    return container;
-}*/
-
-function addCard(gif) {
+function createCard(gif) {
     var elem = document.createElement('div')
         elem.setAttribute('class', 'grid-item');
 
@@ -77,7 +65,7 @@ function appendCard(response){
       });
 
     $(data).each(function(i, gif){
-        arr.push(addCard(gif));
+        arr.push(createCard(gif));
     });
 
     $grid
@@ -92,13 +80,35 @@ function appendCard(response){
     console.log(results);
 }
 
+function prependCard(response){
+    data = response.data;
+    console.log(data);
+
+    var arr = [];
+
+    $(data).each(function(i, gif){
+        arr.push(createCard(gif));
+    });
+
+    $grid
+        .prepend(arr)
+        .masonry('prepended', arr)
+        .masonry('layout');
+    
+    $grid.imagesLoaded().progress(function () {
+        $grid.masonry();
+    });
+
+    console.log(results);
+}
 
 
 topics.forEach(function (item, index) {
     var btn = $('<button>')
         .addClass('aside-btn')
         .val(item)
-        .text(item);
+        .text(item)
+        .attr('data-selected', false);
     aside.append(btn);
 });
 
@@ -108,19 +118,42 @@ $('#addBtn').on('click', function () {
     var btn = $('<button>')
         .addClass('aside-btn')
         .text(query)
-        .val(query);
+        .val(query)
+        .attr('data-selected', 'false');
     aside.prepend(btn);
 });
 
 $(document).on('click', '.aside-btn', function () {
-    var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=zlEsPY1h8Xym7X61wEe9RncZ973KIsCt&q=${$(this).val()}&limit=12&offset=${offset}&rating=PG&lang=en`;
-    console.log(queryURL);
-    $.ajax({
-        url: queryURL,
-        method: 'GET',
-        success: appendCard
-    }).then(() => offset += 12);
+    var selected = $(this).attr('data-selected');
+    if (selected === 'true'){
+        var arr = [];
+        offset = 0;
+        currentQuery = undefined;
+        console.log('element has been un-selected');
+       
+        $(this).attr('data-selected', false);
+        $('.grid-item').each((i, item) => arr.push(item));
+        
+        $grid
+            .masonry('remove', arr)
+            .masonry();      
+        }else if (selected === 'false') {
+            console.log('element has been selected');
+            $(this).attr('data-selected', true);
+            currentQuery = $(this).val();
+            callGify(currentQuery, prependCard);  
+            $(this).addClass('aside-btn--selected')
+    }
 });
+
+
+window.onscroll = function () {
+    var scrolled = Math.floor(document.documentElement.scrollHeight - document.documentElement.scrollTop) <= document.documentElement.clientHeight - 1;
+    if(currentQuery !== undefined && scrolled){
+        callGify(currentQuery, appendCard);
+    }
+};
+
 
 $(document).on('click', '.grid-item', function () {
     var img = $(this).find('img');
@@ -135,3 +168,4 @@ $(document).on('click', '.grid-item', function () {
             .attr('src', img.attr('data-still'));
     }   
 });
+

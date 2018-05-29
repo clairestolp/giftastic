@@ -23,6 +23,7 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    height: 100%;
 }
 
 .center{
@@ -107,8 +108,14 @@ input[type="text"]:focus{
     font-size: 1.1em;
 }
 
+.aside-btn--selected{
+    color: #284476ff;
+    background-color: #e4ecb9ff;
+}
+
 .aside-btn:hover{
     background-color: #284476ff;
+    color: #fff;
     cursor: pointer;
 }
 
