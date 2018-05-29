@@ -122,6 +122,11 @@ input[type="text"]:focus{
     background-color: #e4ecb9ff;
 }
 
+.aside-btn--unselected{
+    color: #fff;
+    background-color: #358ca8ff;
+}
+
 .aside-btn:hover{
     background-color: #284476ff;
     color: #fff;

@@ -116,7 +116,7 @@ $('#addBtn').on('click', function () {
     event.preventDefault();
     var query = $('#query').val().trim();
     var btn = $('<button>')
-        .addClass('aside-btn')
+        .addClass('aside-btn', 'aside-btn-unselected')
         .text(query)
         .val(query)
         .attr('data-selected', 'false');
@@ -131,7 +131,10 @@ $(document).on('click', '.aside-btn', function () {
         currentQuery = undefined;
         console.log('element has been un-selected');
        
-        $(this).attr('data-selected', false);
+        $(this)
+            .attr('data-selected', false)
+            .removeClass('aside-btn--selected')
+            .addClass('aside-btn--unselected');
         $('.grid-item').each((i, item) => arr.push(item));
         
         $grid
@@ -142,7 +145,9 @@ $(document).on('click', '.aside-btn', function () {
             $(this).attr('data-selected', true);
             currentQuery = $(this).val();
             callGify(currentQuery, prependCard);  
-            $(this).addClass('aside-btn--selected')
+            $(this)
+                .removeClass('aside-btn--unselected')
+                .addClass('aside-btn--selected');
     }
 });
 
