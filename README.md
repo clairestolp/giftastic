@@ -32,6 +32,11 @@ A dynamic web application that connects with GIPHY API to display gifs to displa
 
 5. Integrate this search with additional APIs such as OMDB, or Bands in Town. Be creative and build something you are proud to showcase in your portfolio
 
+#### Personal Bonus Goals
+1. Create a masonry style layout
+
+2. Gifs autoload when the user scrolls to the bottom of the page
+
 ### Technology used
 * HTML, CSS
 * JavaScript
@@ -41,26 +46,5 @@ A dynamic web application that connects with GIPHY API to display gifs to displa
 * [Giphy API](https://github.com/Giphy)
 
 ### Approach
-1. Variables
-    * HTML (Object) --> HTML snippets of code will be stored here to be used in the application in an attempt to improve readability
-        ** row
-        ** resultsItem
-        ** topicBtn
-        ** rating
-        ** downloadIcon
-    * topics (Array) --> a default list of topics that loads with the page
 
-2. Classes
-    * .header
-    * .input
-        ** .input-el
-        ** .input-btn
-    * .results
-        ** .results-item
-            *** .results-img
-            *** .results-icon
-            *** .results-text
-                **** .results-text-light
-    * .aside
-        ** aside.btn
 
