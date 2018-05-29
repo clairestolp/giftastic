@@ -43,24 +43,21 @@ Use ajax and jQuery to retrieve data from an api and display it dynamically for 
 
 5. Integrate this search with additional APIs such as OMDB, or Bands in Town. Be creative and build something you are proud to showcase in your portfolio
 
+#### Personal Bonus Goals
+1. Create a masonry style layout
 
+2. Gifs autoload when the user scrolls to the bottom of the page
+
+### Technology used
+* HTML, CSS
+* JavaScript
+* Bootstrap
+* Jquery
+* AJAX
+* [Giphy API](https://github.com/Giphy)
 
 ### Approach
-On click of any of the buttons in the aside element, ajax will make a call to the GIFY api to search the value of the button. A card is created for every result returned. The cards are laid out in the results div using Bootstrap's grid system. A user can also input their own topic into the input and a new button will be created and appended to the aside div.
 
-1. Classes
-    * .header
-    * .input
-        ** .input-el
-        ** .input-btn
-    * .results
-        ** .results-item
-            *** .results-img
-            *** .results-icon
-            *** .results-text
-                **** .results-text-light
-    * .aside
-        ** aside.btn
 
 2. Functions
     * `addCard(gif)` - takes the api data for a said gif and returns a card element
