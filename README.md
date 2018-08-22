@@ -1,5 +1,6 @@
 # GIFtastic
 
+![Demo](https://github.com/clairestolp/giftastic/blob/master/demo.gif?raw=true)
 
 ### Overview
 A dynamic web application that connects with GIPHY API to display gifs to display GIFs based on the emotion the user clicks.
