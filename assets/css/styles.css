@@ -30,6 +30,15 @@ html, body{
     text-align: center;
 }
 
+
+.card-title{
+    font-size: 12px;
+}
+
+.rating{
+    font-size: 12px;
+}
+
 .cursive{
     font-family: 'Pacifico';
 }
@@ -111,6 +120,11 @@ input[type="text"]:focus{
 .aside-btn--selected{
     color: #284476ff;
     background-color: #e4ecb9ff;
+}
+
+.aside-btn--unselected{
+    color: #fff;
+    background-color: #358ca8ff;
 }
 
 .aside-btn:hover{
